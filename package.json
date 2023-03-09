@@ -1,0 +1,8 @@
+{
+    "type": "module",
+    "dependencies": {
+        "@defichain/jellyfish-api-jsonrpc": "^3.29.1",
+        "@defichain/whale-api-client": "^3.29.1",
+        "defichain": "^3.29.1"
+    }
+}
