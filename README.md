@@ -9,3 +9,7 @@ This might look like this: http://user:password@127.0.0.1:8555
 
 ## Credits
 getAccountBtc.js and getVaultBtc.js are basically copy-paste-modified from https://github.com/dpfaffenbauer/defichain-icx-exploit-review/
+
+## Donation Address
+If you want to support this, you can donate to the following Defichain address:
+df1qp3fx9pfju078rz4ewn5gn899358wyvhh4wy63c
