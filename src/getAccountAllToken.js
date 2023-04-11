@@ -13,6 +13,12 @@ const burnAddress = "8defichainBurnAddressXXXXXXXdRQkSm";
 let last = null;
 let loop = 0;
 let btc = 0;
+let eth = 0;
+let usdt = 0;
+let doge = 0;
+let ltc = 0;
+let bch = 0;
+let usdc = 0;
 
 console.log("Defichain BTC Account Analyzer");
 console.log("This script is pretty slow and takes up to a day to finish...");
@@ -59,6 +65,18 @@ while (true) {
 
             if (token==="BTC") {
                 btc += amount;
+            } else if (token==="ETH") {
+                eth += amount;
+            } else if (token==="USDT") {
+                usdt += amount;
+            } else if (token==="DOGE") {
+                doge += amount;
+            } else if (token==="LTC") {
+                ltc += amount;
+            } else if (token==="BCH") {
+                bch += amount;
+            } else if (token==="USDC") {
+                usdc += amount;
             }
         }
 
@@ -68,3 +86,9 @@ while (true) {
 
 console.log("Finished");
 console.log("BTC in Accounts: " + btc)
+console.log("ETH in Accounts: " + eth)
+console.log("USDT in Accounts: " + usdt)
+console.log("DOGE in Accounts: " + doge)
+console.log("LTC in Accounts: " + ltc)
+console.log("BCH in Accounts: " + bch)
+console.log("USDC in Accounts: " + usdc)
