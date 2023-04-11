@@ -69,7 +69,7 @@ while (page.length>0) {
     }
     pageCount++
     if (pageCount%100==0) {
-        console.log("Page:"+pageCount+" length:"+page.length+" btcSum:"+btcSum);
+        console.log("Page:"+pageCount+" length:"+page.length+" btcSum:"+burnSum);
     }
 
     try {
