@@ -88,7 +88,7 @@ const account = await ocean.address.listToken("8defichainBurnAddressXXXXXXXdRQkS
 const burninfo = await ocean.stats.getBurn();
 const token = await ocean.tokens.get('2');
 const backingExpectation = parseFloat(token.minted) - parseFloat(burninfo.tokens[2]);
-const dexFeeSum = parseFloat(burninfo.dexfeetokens[0]) - burnSum;
+const dexFeeSum = parseFloat(burninfo.dexfeetokens[1]) - burnSum;
 
 var end = new Date();
 console.log("=======================================")

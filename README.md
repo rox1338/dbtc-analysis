@@ -14,9 +14,8 @@ getAccountBtc.js and getVaultBtc.js are basically copy-paste-modified from https
 The way I run the scripts to collect data is the following:
 1. Start and update full node
 2. Run *setnetworkactive false* on Defichain commandline
-3. Run *node getAccountBtc.js*
-4. Run *node getDataOcean.js* in parallel
-5. Collect resulting data
+3. Run *node getAllData.js*
+4. Collect resulting data
 
 ## Donation Address
 If you want to support this, you can donate to the following Defichain address:
