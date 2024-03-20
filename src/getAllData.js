@@ -1,19 +1,19 @@
 import { address, WhaleApiClient } from '@defichain/whale-api-client';
 import { JsonRpcClient } from "@defichain/jellyfish-api-jsonrpc";
 import { readFileSync } from 'fs';
-import { exit } from "process";
 
 const FEATURE_VAULTS = true;
-const FEATURE_BURNBOT = true;
+const FEATURE_BURNBOT = false;
 const FEATURE_ACCOUNTS = true;
 
 const burnAddress = "8defichainBurnAddressXXXXXXXdRQkSm";
+const cakeDBTCAddress = "df1qjl5qwq30t893njlut26w2cvvj6h9p2ksej45xuxw9nljm0zeg2zqs7f0zz";
 
 console.log("dBTC Statistics");
 var start = new Date();
 console.log("Starttime: " + start.toLocaleString());
 
-const response = await fetch('https://blockchain.info/q/addressbalance/38pZuWUti3vSQuvuFYs8Lwbyje8cmaGhrT');
+const response = await fetch('https://blockchain.info/q/addressbalance/3GcSHxkKY8ADMWRam51T1WYxYSb2vH62VL');
 const backingAddress = await response.json() / 100000000;
 
 const rpcEndpoint = readFileSync('./rpcEndpoint');
@@ -33,6 +33,7 @@ const tokenResult = await client.token.getToken('BTC');
 const token = tokenResult['2'];
 const backingExpectation = parseFloat(token.minted) - parseFloat(burninfo.tokens[2]);
 const blockcount = await client.blockchain.getBlockCount();
+const cakeDBTC = await client.account.getAccount(cakeDBTCAddress);
 console.log("Starttime: " + start.toLocaleString());
 console.log("Blockcount: " + blockcount);
 console.log("BTC in " + poolpair.symbol + ": " + poolpair.reserveA);
@@ -41,6 +42,7 @@ console.log("BTC burned by Cake " + burninfo.tokens[2]);
 console.log("Burn total: " + account[2]);
 console.log("Backing expectation: " + backingExpectation);
 console.log("Backing address: " + backingAddress);
+console.log("Cake dBTC Buying: " + cakeDBTC);
 ////
 
 let vaultSum = 0;
@@ -116,6 +118,8 @@ if (FEATURE_BURNBOT) {
         }
     }
     console.log("Burnbot finished");
+} else {
+    burnSum = 108.16;
 }
 
 ////
@@ -192,5 +196,6 @@ console.log("BTC burned by Dexfee " + dexFeeSum);
 console.log("Burn total: " + account[2]);
 console.log("Backing expectation: " + backingExpectation);
 console.log("Backing address: " + backingAddress);
+console.log("Cake dBTC Buying: " + cakeDBTC);
 console.log("=======================================")
 
